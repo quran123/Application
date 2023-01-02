@@ -6,7 +6,6 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioButton
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.application.databinding.ActivityQuoteAddUpdateBinding
@@ -50,13 +49,13 @@ class QuoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
             val selectedOption: Int = radioGroup!!.checkedRadioButtonId
             radioButton = findViewById(selectedOption)
-            Toast.makeText(baseContext, radioButton.text, Toast.LENGTH_SHORT).show()
             val answer=radioButton.text
             val question = binding.edtQuestion.text.toString().trim()
             val option1 = binding.edtOption1.text.toString().trim()
             val option2 = binding.edtOption2.text.toString().trim()
             val option3 = binding.edtOption3.text.toString().trim()
             val option4 = binding.edtOption4.text.toString().trim()
+
 
             if (question.isEmpty()) {
                 binding.edtQuestion.error = "Field can not be blank"

@@ -29,7 +29,6 @@ class ParticipateQuizFragment() : Fragment() , View.OnClickListener {
 
             }else{
                 val intent = Intent(activity, QuizList::class.java)
-                Toast.makeText(view?.context, "Quiz Started", Toast.LENGTH_LONG).show()
                 intent.putExtra(Constants.USER_NAME, et_input_text.text.toString())
                 startActivity(intent)
                 (activity as Activity?)?.overridePendingTransition(0, 0)
